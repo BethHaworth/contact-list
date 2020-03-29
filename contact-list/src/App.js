@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import Contacts from './components/Contacts';
+import Paginate from './components/Paginate';
+import Typography from '@material-ui/core/Typography';
 import './App.css';
+import { Container } from '@material-ui/core';
+
 
 class App extends Component {
 
@@ -19,7 +24,11 @@ class App extends Component {
 
   render() {
     return (
+      <Container maxWidth="lg"> 
+      <Typography variant="h2" className="title"> Contact List </Typography>
       <Contacts contacts={this.state.contacts} />
+      <Paginate />
+      </Container>
     );
   }
 }
